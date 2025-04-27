@@ -5,7 +5,7 @@ using namespace std;
 
 Node* GetNodeInDeck(Deck& deck, unsigned int node_number) {
 	unsigned int node_count = deck.GetNodeCount();
-	if (node_number >= node_count || node_number < 0) { return nullptr; }
+	if (node_number >= node_count) { return nullptr; }
 
 	Node* node = deck.get_front_node();
 	for (int i = 0; i < node_number; i++) {
@@ -19,17 +19,23 @@ void InsertSortMark(Deck& deck) {
 	unsigned int node_count = deck.GetNodeCount();
 	if (node_count < 2) { return; }
 	
-	Node* head_node = GetNodeInDeck(deck, 1);
+	Node* current_node = GetNodeInDeck(deck, 1);
 	
-	for (int i = 1; head_node != nullptr; i++) {
+	for (int i = 1; current_node != nullptr; i++) {
 		Node* this_node = GetNodeInDeck(deck, i - 1);
+		Applicant key = current_node->data;
 		
-		for (int j = i - 1; j >= 0 && this_node->data.mark > head_node->data.mark; j--) {
-			swap(head_node->data, this_node->data);
-			head_node = head_node->next_ptr;
+		int j = i - 1;
+		for (; j >= 0 && this_node->data.mark > key.mark; j--) {
+			current_node->data = this_node->data;
+			current_node = this_node;
 			this_node = this_node->next_ptr;
 		}
 
-		head_node = GetNodeInDeck(deck, i + 1);
+		if (j != i - 1) {
+			current_node->data = key;
+		}
+
+		current_node = GetNodeInDeck(deck, i + 1);
 	}
 }
