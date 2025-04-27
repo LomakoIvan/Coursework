@@ -148,6 +148,22 @@ Applicant* Deck::pop_back() {
 	return person;
 }
 
+Node* Deck::get_front_node() {
+	return start_node;
+}
+
+Node* Deck::get_back_node() {
+	return end_node;
+}
+
+Applicant Deck::get_front_data() {
+	return start_node->data;
+}
+
+Applicant Deck::get_back_data() {
+	return end_node->data;
+}
+
 int Deck::GetNodeCount() {
 	return node_count;
 }

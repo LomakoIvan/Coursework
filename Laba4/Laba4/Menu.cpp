@@ -2,6 +2,7 @@
 #include "Applicants.h"
 #include "Data.h"
 #include "FileMenu.h"
+#include "SortModule.h"
 #include <iostream>
 
 using namespace std;
@@ -42,7 +43,7 @@ void Exercise5() {
 }
 
 void Exercise6() {
-	
+	InsertSortMark(applicants);
 }
 
 void Menu() {
