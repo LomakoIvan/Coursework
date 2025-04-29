@@ -1,4 +1,4 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Laba4.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   SortModule.cpp
-C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\SortModule.cpp(11,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\SortModule.cpp(12,20): warning C4018: <: несоответствие типов со знаком и без знака
   Laba4.vcxproj -> C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\x64\Debug\Main.exe
