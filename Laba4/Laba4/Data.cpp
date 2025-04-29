@@ -342,22 +342,21 @@ void DisplayTableApplicants() {
 	PrintTableLine((char*)"Адрес", table.column_size[3], false);
 	PrintTableLine((char*)"Дата", table.column_size[4], true);
 
-	Deck temp_deck;
-	temp_deck.Init();
 	int node_count = applicants.GetNodeCount();
+	Node* head = applicants.get_front_node();
 
 	for (int i = 0; i < node_count; i++) {
-		Applicant* person = applicants.pop_front();
-		temp_deck.push_back(*person);
+		if (!head) { continue; }
+		Applicant person = head->data;
 
 		PrintTableText(IntToCharArray(i + 1), table.column_size[0], false);
-		PrintTableText(person->name, table.column_size[1], false);
-		PrintTableText(IntToCharArray(person->mark), table.column_size[2], false);
-		PrintTableText(person->addr, table.column_size[3], false);
-		PrintTableText(person->date, table.column_size[4], true);
-	}
+		PrintTableText(person.name, table.column_size[1], false);
+		PrintTableText(IntToCharArray(person.mark), table.column_size[2], false);
+		PrintTableText(person.addr, table.column_size[3], false);
+		PrintTableText(person.date, table.column_size[4], true);
 
-	applicants = temp_deck;
+		head = head->next_ptr;
+	}
 
 	cout << endl;
 }

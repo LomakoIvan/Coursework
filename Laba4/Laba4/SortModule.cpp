@@ -20,26 +20,26 @@ void InsertSortMark(Deck& deck) {
 	unsigned int node_count = deck.GetNodeCount();
 	if (node_count < 2) { return; }
 
-	Node* key_node = deck.get_front_node()->prev_ptr;
+	Node* key_node = deck.get_front_node()->next_ptr;
 
 	for (int i = 1; key_node != nullptr; i++) {
 		Applicant key = key_node->data;
 		Node* current_node = key_node;
-		Node* this_node = key_node->next_ptr;
+		Node* this_node = key_node->prev_ptr;
 
-		if (!this_node) { return; }
+		if (!this_node) { continue; }
 
 		int j = i - 1;
 		for (; j >= 0 && this_node->data.mark > key.mark; j--) {
 			current_node->data = this_node->data;
 			current_node = this_node;
-			this_node = this_node->next_ptr;
+			this_node = this_node->prev_ptr;
 		}
 
 		if (j != i - 1) {
 			current_node->data = key;
 		}
 
-		key_node = key_node->prev_ptr;
+		key_node = key_node->next_ptr;
 	}
 }

@@ -16,8 +16,8 @@ struct Node {
 
 struct Deck {
 private:
-	Node* start_node = nullptr;
-	Node* end_node = nullptr;
+	Node* front_node = nullptr;
+	Node* back_node = nullptr;
 	int node_count = 0;
 
 	void ClearDataInApplicant(Applicant& applicant);
