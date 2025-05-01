@@ -300,12 +300,11 @@ void TableAutoResize() {
 	int length = 0;
 	
 	int applicants_count = applicants.GetNodeCount();
-	
 	Queue temp_queue;
 
 	for (int i = 0; !applicants.isEmpty(); i++) {
 		Applicant person = *applicants.pop_front();
-		temp_queue.push_front(person);
+		temp_queue.push_back(person);
 
 		length = strlen(person.name);
 		if (length > table.column_size[1]) {
@@ -323,11 +322,13 @@ void TableAutoResize() {
 		}
 	}
 
+	while (!temp_queue.isEmpty()) {
+		applicants.push_back(*temp_queue.pop_front());
+	}
+
 	for (int i = 0; i < table.column_count; i++) {
 		table.size += table.column_size[i];
 	}
-
-	applicants = temp_queue;
 }
 
 //Write table in console
@@ -346,7 +347,7 @@ void DisplayTableApplicants() {
 
 	for (int i = 0; !applicants.isEmpty(); i++) {
 		Applicant person = *applicants.pop_front();
-		temp_queue.push_front(person);
+		temp_queue.push_back(person);
 
 		PrintTableText(IntToCharArray(i + 1), table.column_size[0], false);
 		PrintTableText(person.name, table.column_size[1], false);
@@ -354,11 +355,10 @@ void DisplayTableApplicants() {
 		PrintTableText(person.addr, table.column_size[3], false);
 		PrintTableText(person.date, table.column_size[4], true);
 	}
-
 	cout << endl;
 
 	while (!temp_queue.isEmpty()) {
-		applicants.push_front(*temp_queue.pop_front());
+		applicants.push_back(*temp_queue.pop_front());
 	}
 }
 
@@ -384,5 +384,5 @@ void CreateApplicant() {
 	new_applicant.date = new_date;
 	new_applicant.mark = mark;
 
-	applicants.push_front(new_applicant);
+	applicants.push_back(new_applicant);
 }

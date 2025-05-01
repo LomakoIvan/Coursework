@@ -1,6 +1,6 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Laba4.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   Applicants.cpp
-C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\Applicants.cpp(49,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\Applicants.cpp(50,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\Applicants.cpp(51,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\Applicants.cpp(54,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\Applicants.cpp(55,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\Applicants.cpp(56,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
   Laba4.vcxproj -> C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\x64\Debug\Main.exe

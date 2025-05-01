@@ -8,36 +8,41 @@ Queue applicants;
 
 Queue::Queue() {
 	front_node = nullptr;
+	back_node = nullptr;
 	node_count = 0;
 }
 
 void Queue::Init() {
 	front_node = nullptr;
+	back_node = nullptr;
 	node_count = 0;
 }
 
 void Queue::Display() {
-	Queue temp_queue = applicants;
+	Queue temp_queue;
 
 	while (!isEmpty()) {
 		Applicant person = *applicants.pop_front();
+		temp_queue.push_back(person);
 		cout << person.name << " " << person.addr << " " << person.mark << " " << person.date << endl;
 	}
 
-	applicants = temp_queue;
+	while (!temp_queue.isEmpty()) {
+		applicants.push_back(*temp_queue.pop_front());
+	}
 }
 
-void Queue::push_front(Applicant data) {
+void Queue::push_back(Applicant data) {
 	Node* new_node = (Node*)AllocateMemory(sizeof(Node));
 	new_node->data = data;
+	new_node->next_ptr = nullptr;
 	
-	if (!front_node) {
-		front_node = new_node;
-		new_node->next_ptr = nullptr;
+	if (!back_node) {
+		back_node = front_node = new_node;
 	}
 	else {
-		new_node->next_ptr = front_node;
-		front_node = new_node;
+		back_node->next_ptr = new_node;
+		back_node = new_node;
 	}
 
 	node_count++;
@@ -61,12 +66,11 @@ Applicant* Queue::pop_front() {
 	(*person).mark = front_node->data.mark;
 
 	Node* temp = front_node->next_ptr;
-
-	ClearDataInApplicant(front_node->data);
 	front_node->next_ptr = nullptr;
 	free(front_node);
 
 	front_node = temp;
+	if (!temp) { back_node = temp; }
 
 	node_count--;
 	return person;
@@ -104,6 +108,8 @@ void Queue::Clear() {
 		free(front_node);
 		front_node = temp;
 	}
+
+	back_node = nullptr;
 
 	node_count = 0;
 }

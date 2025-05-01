@@ -16,6 +16,7 @@ private:
 	};
 
 	Node* front_node = nullptr;
+	Node* back_node = nullptr;
 	int node_count = 0;
 
 	void ClearDataInApplicant(Applicant& applicant);
@@ -24,7 +25,7 @@ public:
 	Queue();
 	void Init();
 	void Display();
-	void push_front(Applicant data);
+	void push_back(Applicant data);
 	Applicant* pop_front();
 	int GetNodeCount();
 	bool isEmpty();

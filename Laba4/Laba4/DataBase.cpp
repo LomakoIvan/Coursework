@@ -85,7 +85,7 @@ bool save_DB(char* file_name) {
 	file.write((char*)&count, sizeof(int));
 	for (int i = 0; i < count; i++) {
 		Applicant person = *applicants.pop_front();
-		temp_queue.push_front(person);
+		temp_queue.push_back(person);
 
 		file.write(person.name, sizeof(char) * 34);
 		file.write((char*)&person.mark, sizeof(int));
@@ -93,7 +93,9 @@ bool save_DB(char* file_name) {
 		file.write(person.date, sizeof(char) * 12);
 	}
 
-	applicants = temp_queue;
+	while (!temp_queue.isEmpty()) {
+		applicants.push_back(*temp_queue.pop_front());
+	}
 
 	file.close();
 	return true;
@@ -112,7 +114,7 @@ bool load_DB(char* file_name) {
 
 	int applicants_count = applicants.GetNodeCount();
 
-	for (int i = applicants_count; i < applicants_count + count; i++) {
+	for (int i = 0; i < count; i++) {
 		Applicant person;
 
 		person.name = (char*)AllocateMemory(sizeof(char) * 34);
@@ -124,7 +126,7 @@ bool load_DB(char* file_name) {
 		file.read(person.addr, sizeof(char) * 34);
 		file.read(person.date, sizeof(char) * 12);
 
-		applicants.push_front(person);
+		applicants.push_back(person);
 	}
 
 	file.close();
