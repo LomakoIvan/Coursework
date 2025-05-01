@@ -223,7 +223,7 @@ void TableInit() {
 //Print all applicants
 void DisplayApplicants() {
 	cout << "\n------------------Список всех абитуриентов------------------\n";
-	applicants.DisplayFrontToBack();
+	applicants.Display();
 
 	/*for (int i = 0; i < applicants_count; i++) {
 		cout << "\nАбитуриент номер " << i + 1;
@@ -300,24 +300,24 @@ void TableAutoResize() {
 	int length = 0;
 	
 	int applicants_count = applicants.GetNodeCount();
-	Deck temp_deck;
-	temp_deck.Init();
+	
+	Queue temp_queue;
 
-	for (int i = 0; i < applicants_count; i++) {
-		Applicant* person = applicants.pop_front();
-		temp_deck.push_back(*person);
+	for (int i = 0; !applicants.isEmpty(); i++) {
+		Applicant person = *applicants.pop_front();
+		temp_queue.push_front(person);
 
-		length = strlen(person->name);
+		length = strlen(person.name);
 		if (length > table.column_size[1]) {
 			table.column_size[1] += length - table.column_size[1] + 4;
 		}
 
-		length = strlen(person->addr);
+		length = strlen(person.addr);
 		if (length > table.column_size[3]) {
 			table.column_size[3] += length - table.column_size[3] + 4;
 		}
 
-		length = strlen(person->date);
+		length = strlen(person.date);
 		if (length > table.column_size[4]) {
 			table.column_size[4] += length - table.column_size[4] + 4;
 		}
@@ -327,7 +327,7 @@ void TableAutoResize() {
 		table.size += table.column_size[i];
 	}
 
-	applicants = temp_deck;
+	applicants = temp_queue;
 }
 
 //Write table in console
@@ -342,23 +342,24 @@ void DisplayTableApplicants() {
 	PrintTableLine((char*)"Адрес", table.column_size[3], false);
 	PrintTableLine((char*)"Дата", table.column_size[4], true);
 
-	int node_count = applicants.GetNodeCount();
-	Node* head = applicants.get_front_node();
+	Queue temp_queue;
 
-	for (int i = 0; i < node_count; i++) {
-		if (!head) { continue; }
-		Applicant person = head->data;
+	for (int i = 0; !applicants.isEmpty(); i++) {
+		Applicant person = *applicants.pop_front();
+		temp_queue.push_front(person);
 
 		PrintTableText(IntToCharArray(i + 1), table.column_size[0], false);
 		PrintTableText(person.name, table.column_size[1], false);
 		PrintTableText(IntToCharArray(person.mark), table.column_size[2], false);
 		PrintTableText(person.addr, table.column_size[3], false);
 		PrintTableText(person.date, table.column_size[4], true);
-
-		head = head->next_ptr;
 	}
 
 	cout << endl;
+
+	while (!temp_queue.isEmpty()) {
+		applicants.push_front(*temp_queue.pop_front());
+	}
 }
 
 //Create new Applicant and return him
@@ -383,5 +384,5 @@ void CreateApplicant() {
 	new_applicant.date = new_date;
 	new_applicant.mark = mark;
 
-	applicants.push_back(new_applicant);
+	applicants.push_front(new_applicant);
 }

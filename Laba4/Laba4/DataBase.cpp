@@ -80,21 +80,20 @@ bool save_DB(char* file_name) {
 	if (!file.is_open()) { return false; }
 
 	int count = applicants.GetNodeCount();
-	Deck temp_deck;
-	temp_deck.Init();
+	Queue temp_queue;
 
 	file.write((char*)&count, sizeof(int));
 	for (int i = 0; i < count; i++) {
-		Applicant* person = applicants.pop_front();
-		temp_deck.push_back(*person);
+		Applicant person = *applicants.pop_front();
+		temp_queue.push_front(person);
 
-		file.write(person->name, sizeof(char) * 34);
-		file.write((char*)&person->mark, sizeof(int));
-		file.write(person->addr, sizeof(char) * 34);
-		file.write(person->date, sizeof(char) * 12);
+		file.write(person.name, sizeof(char) * 34);
+		file.write((char*)&person.mark, sizeof(int));
+		file.write(person.addr, sizeof(char) * 34);
+		file.write(person.date, sizeof(char) * 12);
 	}
 
-	applicants = temp_deck;
+	applicants = temp_queue;
 
 	file.close();
 	return true;
@@ -125,7 +124,7 @@ bool load_DB(char* file_name) {
 		file.read(person.addr, sizeof(char) * 34);
 		file.read(person.date, sizeof(char) * 12);
 
-		applicants.push_back(person);
+		applicants.push_front(person);
 	}
 
 	file.close();

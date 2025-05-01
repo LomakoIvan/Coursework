@@ -1,6 +1,6 @@
 #ifndef SORTMODULE_H
 #define SORTMODULE_H
 
-void InsertSortMark(Deck& deck);
+void InsertSortMark(Queue& queue);
 
 #endif

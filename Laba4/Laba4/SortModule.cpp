@@ -4,20 +4,8 @@
 
 using namespace std;
 
-Node* GetNodeInDeck(Deck& deck, unsigned int node_number) {
-	unsigned int node_count = deck.GetNodeCount();
-	if (node_number >= node_count) { return nullptr; }
-
-	Node* node = deck.get_front_node();
-	for (int i = 0; i < node_number; i++) {
-		node = node->prev_ptr;
-	}
-	
-	return node;
-}
-
-void InsertSortMark(Deck& deck) {
-	unsigned int node_count = deck.GetNodeCount();
+void InsertSortMark(Queue& queue) {
+	/*unsigned int node_count = queue.GetNodeCount();
 	if (node_count < 2) { return; }
 
 	Node* key_node = deck.get_front_node()->next_ptr;
@@ -41,5 +29,5 @@ void InsertSortMark(Deck& deck) {
 		}
 
 		key_node = key_node->next_ptr;
-	}
+	}*/
 }
