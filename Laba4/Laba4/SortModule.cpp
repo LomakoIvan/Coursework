@@ -5,29 +5,39 @@
 using namespace std;
 
 void InsertSortMark(Queue& queue) {
-	/*unsigned int node_count = queue.GetNodeCount();
-	if (node_count < 2) { return; }
+	unsigned int queue_length = queue.GetNodeCount();
+	if (queue_length < 2) { return; }
+	
+    Queue sortedQueue;
+    sortedQueue.push_back(*queue.pop_front());
 
-	Node* key_node = deck.get_front_node()->next_ptr;
+    while (!queue.isEmpty()) {
+        Applicant extracted = *queue.pop_front();
 
-	for (int i = 1; key_node != nullptr; i++) {
-		Applicant key = key_node->data;
-		Node* current_node = key_node;
-		Node* this_node = key_node->prev_ptr;
+        Queue tempQueue;
+        bool inserted = false;
 
-		if (!this_node) { continue; }
+        while (!sortedQueue.isEmpty()) {
+            Applicant current = *sortedQueue.pop_front();
 
-		int j = i - 1;
-		for (; j >= 0 && this_node->data.mark > key.mark; j--) {
-			current_node->data = this_node->data;
-			current_node = this_node;
-			this_node = this_node->prev_ptr;
-		}
+            if (!inserted && current.mark > extracted.mark) {
+                tempQueue.push_back(extracted);
+                inserted = true;
+            }
 
-		if (j != i - 1) {
-			current_node->data = key;
-		}
+            tempQueue.push_back(current);
+        }
 
-		key_node = key_node->next_ptr;
-	}*/
+        if (!inserted) {
+            tempQueue.push_back(extracted);
+        }
+
+        while (tempQueue.GetNodeCount() > 0) {
+            sortedQueue.push_back(*tempQueue.pop_front());
+        }
+    }
+
+    while (sortedQueue.GetNodeCount() > 0) {
+        queue.push_back(*sortedQueue.pop_front());
+    }
 }
