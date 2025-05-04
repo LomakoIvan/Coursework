@@ -27,7 +27,6 @@ public:
 	void Display();
 	void push_back(Applicant data);
 	Applicant* pop_front();
-	void CopyTo(Queue to_queue);
 	int GetNodeCount();
 	bool isEmpty();
 	void Clear();

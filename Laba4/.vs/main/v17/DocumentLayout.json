@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|solutionrelative:Laba4\\SortModule.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Applicants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|solutionrelative:Laba4\\Applicants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\SortModule.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|solutionrelative:Laba4\\SortModule.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Applicants.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|solutionrelative:Laba4\\Applicants.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AF66C6B7-930E-4EF0-BA7F-77437947603C}|Laba4\\Laba4.vcxproj|solutionrelative:Laba4\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,32 +22,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Applicants.h",
-              "DocumentMoniker": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Applicants.h",
-              "RelativeDocumentMoniker": "Laba4\\Applicants.h",
-              "ToolTip": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Applicants.h",
-              "RelativeToolTip": "Laba4\\Applicants.h",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABwAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-01T19:21:14.875Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Applicants.cpp",
-              "DocumentMoniker": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Applicants.cpp",
-              "RelativeDocumentMoniker": "Laba4\\Applicants.cpp",
-              "ToolTip": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Applicants.cpp",
-              "RelativeToolTip": "Laba4\\Applicants.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-01T19:18:42.205Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -56,9 +32,35 @@
               "RelativeDocumentMoniker": "Laba4\\SortModule.cpp",
               "ToolTip": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\SortModule.cpp",
               "RelativeToolTip": "Laba4\\SortModule.cpp",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACoAAAABAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAAGMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-01T18:17:04.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SortModule.h",
+              "DocumentMoniker": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\SortModule.h",
+              "RelativeDocumentMoniker": "Laba4\\SortModule.h",
+              "ToolTip": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\SortModule.h",
+              "RelativeToolTip": "Laba4\\SortModule.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-03T18:10:50.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Menu.cpp",
+              "DocumentMoniker": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Menu.cpp",
+              "RelativeDocumentMoniker": "Laba4\\Menu.cpp",
+              "ToolTip": "C:\\Users\\Hartchik\\Desktop\\Lb\\\u041E\u0410\u0438\u041F\\2 sem\\laba_number_9\\Laba4\\Laba4\\Menu.cpp",
+              "RelativeToolTip": "Laba4\\Menu.cpp",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAFMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-03T18:09:46.055Z",
               "EditorCaption": ""
             }
           ]

@@ -14,7 +14,10 @@ void PrintMenu() {
 	cout << "\n3)Вывод абитуриентов в виде таблицы";
 	cout << "\n4)Очистить динамическую память";
 	cout << "\n5)Работа с базами данных";
-	cout << "\n6)Сортировка базы данных";
+	cout << "\n6)Сортировать вставками по полю \"Оценка\"";
+	cout << "\n7)Сортировка вставками по полю \"ФИО\"";
+	cout << "\n8)Сортировать Heap Sort по полю \"Оценка\"";
+	cout << "\n9)Сортировка Heap Sort по полю \"ФИО\"";
 	cout << "\n0)Выйти";
 }
 
@@ -46,6 +49,18 @@ void Exercise6() {
 	InsertSortMark(applicants);
 }
 
+void Exercise7() {
+	InsertSortName(applicants);
+}
+
+void Exercise8() {
+	heapSortQueueMark(applicants);
+}
+
+void Exercise9() {
+	heapSortQueueName(applicants);
+}
+
 void Menu() {
 	applicants.Init();
 	TableInit();
@@ -64,6 +79,9 @@ void Menu() {
 		case 4: { Exercise4(); break; }
 		case 5: { Exercise5(); break; }
 		case 6: { Exercise6(); break; }
+		case 7: { Exercise7(); break; }
+		case 8: { Exercise8(); break; }
+		case 9: { Exercise9(); break; }
 		case 0: {
 			close = true;
 			applicants.Clear();

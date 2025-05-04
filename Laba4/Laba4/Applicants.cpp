@@ -84,15 +84,6 @@ bool Queue::isEmpty() {
 	return node_count == 0;
 }
 
-void Queue::CopyTo(Queue queue) {
-	Node* head_node = front_node;
-	
-	while (head_node) {
-		queue.push_back(head_node->data);
-		head_node = head_node->next_ptr;
-	}
-}
-
 void Queue::ClearDataInApplicant(Applicant& applicant) {
 	if (applicant.name) {
 		free(applicant.name);
