@@ -36,9 +36,6 @@
     <ClCompile Include="FileMenu.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="SortModule.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="SortMenu.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -62,7 +59,7 @@
     <ClInclude Include="FileMenu.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="SortModule.h">
+    <ClInclude Include="SortMenu.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

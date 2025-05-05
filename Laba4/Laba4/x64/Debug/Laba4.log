@@ -1,3 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Laba4.vcxproj).  Это может привести к ошибкам очистки и перестроения.
-  Menu.cpp
+  SortMenu.cpp
+C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\SortMenu.cpp(73,70): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\Laba4\SortMenu.cpp(74,31): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
   Laba4.vcxproj -> C:\Users\Hartchik\Desktop\Lb\ОАиП\2 sem\laba_number_9\Laba4\x64\Debug\Main.exe
