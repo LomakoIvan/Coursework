@@ -21,7 +21,7 @@ bool isAlphabetically(char* first_str, char* second_str) {
 }
 
 
-void InsertSortMark(Queue& queue) {
+void InsertSortMark(Queue& queue, bool reverse) {
 	unsigned int queue_length = queue.GetNodeCount();
 	if (queue_length < 2) { return; }
 	
@@ -37,7 +37,7 @@ void InsertSortMark(Queue& queue) {
         while (!sortedQueue.isEmpty()) {
             Applicant current = *sortedQueue.pop_front();
 
-            if (!inserted && current.mark > extracted.mark) {
+            if (!inserted && current.mark > extracted.mark == !reverse) {
                 tempQueue.push_back(extracted);
                 inserted = true;
             }
@@ -59,7 +59,7 @@ void InsertSortMark(Queue& queue) {
     }
 }
 
-void InsertSortName(Queue& queue) {
+void InsertSortName(Queue& queue, bool reverse) {
     unsigned int queue_length = queue.GetNodeCount();
     if (queue_length < 2) { return; }
 
@@ -75,7 +75,7 @@ void InsertSortName(Queue& queue) {
         while (!sortedQueue.isEmpty()) {
             Applicant current = *sortedQueue.pop_front();
 
-            if (!inserted && isAlphabetically(current.name, extracted.name)) {
+            if (!inserted && isAlphabetically(current.name, extracted.name) == !reverse) {
                 tempQueue.push_back(extracted);
                 inserted = true;
             }
@@ -151,7 +151,7 @@ void SwapApplicantsInPositions(Queue& queue, int position1, int position2) {
 }
 
 
-void heapifyMark(Queue& queue, int size, int i) {
+void HeapifyMark(Queue& queue, int size, int i, bool reverse) {
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -160,34 +160,34 @@ void heapifyMark(Queue& queue, int size, int i) {
     Applicant* leftApplicant = GetApplicantInPosition(queue, left);
     Applicant* rightApplicant = GetApplicantInPosition(queue, right);
 
-    if (left < size && leftApplicant->mark > rootApplicant->mark)
+    if (left < size && leftApplicant->mark > rootApplicant->mark == !reverse)
         largest = left;
 
-    if (right < size && rightApplicant->mark > GetApplicantInPosition(queue, largest)->mark)
+    if (right < size && rightApplicant->mark > GetApplicantInPosition(queue, largest)->mark == !reverse)
         largest = right;
 
     if (largest != i) {
         SwapApplicantsInPositions(queue, i, largest);
-        heapifyMark(queue, size, largest);
+        HeapifyMark(queue, size, largest, reverse);
     }
 }
 
-void heapSortQueueMark(Queue& queue) {
+void HeapSortQueueMark(Queue& queue, bool reverse) {
     int n = queue.GetNodeCount();
     if (n < 2) return;
 
     for (int i = n / 2 - 1; i >= 0; i--) {
-        heapifyMark(queue, n, i);
+        HeapifyMark(queue, n, i, reverse);
     }
 
     for (int i = n - 1; i > 0; i--) {
         SwapApplicantsInPositions(queue, 0, i);
-        heapifyMark(queue, i, 0);
+        HeapifyMark(queue, i, 0, reverse);
     }
 }
 
 
-void heapifyName(Queue& queue, int size, int i) {
+void HeapifyName(Queue& queue, int size, int i, bool reverse) {
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -196,30 +196,30 @@ void heapifyName(Queue& queue, int size, int i) {
     Applicant* leftApplicant = GetApplicantInPosition(queue, left);
     Applicant* rightApplicant = GetApplicantInPosition(queue, right);
 
-    if (left < size && isAlphabetically(leftApplicant->name, rootApplicant->name)) {
+    if (left < size && isAlphabetically(leftApplicant->name, rootApplicant->name) == !reverse) {
         largest = left;
     }
 
-    if (right < size && isAlphabetically(rightApplicant->name, GetApplicantInPosition(queue, largest)->name)) {
+    if (right < size && isAlphabetically(rightApplicant->name, GetApplicantInPosition(queue, largest)->name) == !reverse) {
         largest = right;
     }
 
     if (largest != i) {
         SwapApplicantsInPositions(queue, i, largest);
-        heapifyName(queue, size, largest);
+        HeapifyName(queue, size, largest, reverse);
     }
 }
 
-void heapSortQueueName(Queue& queue) {
+void HeapSortQueueName(Queue& queue, bool reverse) {
     int n = queue.GetNodeCount();
     if (n < 2) return;
 
     for (int i = n / 2 - 1; i >= 0; i--) {
-        heapifyName(queue, n, i);
+        HeapifyName(queue, n, i, reverse);
     }
 
     for (int i = n - 1; i > 0; i--) {
         SwapApplicantsInPositions(queue, 0, i);
-        heapifyName(queue, i, 0);
+        HeapifyName(queue, i, 0, reverse);
     }
 }

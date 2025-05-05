@@ -56,14 +56,10 @@ Applicant* Queue::pop_front() {
 	int date_length = strlen(front_node->data.date) + 1;
 
 	Applicant* person = (Applicant*)AllocateMemory(sizeof(Applicant));
-	(*person).name = (char*)AllocateMemory(sizeof(char) * name_length);
-	(*person).addr = (char*)AllocateMemory(sizeof(char) * addr_length);
-	(*person).date = (char*)AllocateMemory(sizeof(char) * date_length);
-
-	strcpy_s((*person).name, name_length, front_node->data.name);
-	strcpy_s((*person).addr, addr_length, front_node->data.addr);
-	strcpy_s((*person).date, date_length, front_node->data.date);
-	(*person).mark = front_node->data.mark;
+	person->name = front_node->data.name;
+	person->addr = front_node->data.addr;
+	person->mark = front_node->data.mark;
+	person->date = front_node->data.date;
 
 	Node* temp = front_node->next_ptr;
 	front_node->next_ptr = nullptr;

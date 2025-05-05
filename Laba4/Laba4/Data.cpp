@@ -57,7 +57,7 @@ char* GetCheckNameData(char* alarm = (char*)"", char* warning = (char*)"") {
 			i++;
 		}
 
-		if (isFail) { cout << warning; }
+		if (isFail || strlen(text) < 1) { cout << warning; }
 		else { return text; }
 	}
 }
@@ -87,7 +87,7 @@ char* GetCheckAddrData(char* alarm = (char*)"", char* warning = (char*)"")
 			i++;
 		}
 
-		if (isFail) { cout << warning; }
+		if (isFail || strlen(text) < 1) { cout << warning; }
 		else { return text; }
 	}
 }
@@ -366,10 +366,16 @@ void DisplayTableApplicants() {
 void CreateApplicant() {
 	Applicant new_applicant;
 
-	char* name = GetCheckNameData((char*)"Введите ФИО абитуриента: ", (char*)"Ошибка ввода\n");
-	char* addr = GetCheckAddrData((char*)"Введите адрес абитуриента: ", (char*)"Ошибка ввода\n");
-	int mark = GetCheckIntData((char*)"Введите баллы абитуриента: ", (char*)"Ошибка ввода\n");
-	char* date = GetCheckDateData((char*)"Введите дату: ", (char*)"Ошибка ввода\n");
+	char* name = GetCheckNameData((char*)"Введите ФИО абитуриента: ", (char*)"\nОшибка ввода\n");
+	char* addr = GetCheckAddrData((char*)"Введите адрес абитуриента: ", (char*)"\nОшибка ввода\n");
+	int mark = GetCheckIntData((char*)"Введите баллы абитуриента: ", (char*)"\nОшибка ввода\n");;
+	
+	while (mark < 0 || mark > 400) {
+		cout << "\nОшибка. Оценка должна быть от 0 до 400. Попробуйте снова.\n";
+		mark = GetCheckIntData((char*)"Введите баллы абитуриента: ", (char*)"\nОшибка ввода\n");
+	}
+	
+	char* date = GetCheckDateData((char*)"Введите дату: ", (char*)"\nОшибка ввода\n");
 
 	char* new_name = (char*)AllocateMemory(sizeof(char) * strlen(name) + 1);
 	char* new_addr = (char*)AllocateMemory(sizeof(char) * strlen(addr) + 1);
